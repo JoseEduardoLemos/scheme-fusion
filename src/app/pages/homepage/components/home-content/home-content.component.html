@@ -1,0 +1,35 @@
+<div class="home-content">
+    <div class="row">
+        <h2 class="label">Pick the colors of your brand to generate the Color Scheme for you Website.</h2>
+    </div>
+    <div class="row">
+        <h3 class="label">You can chose at last three colours.</h3>
+    </div>
+    <div class="boxes-buttons">
+        <div class="boxes">
+            <input id="primary-box" readonly class="box primary-box" [(colorPicker)]="homeService.primaryColor" [style.background]="homeService.primaryColor"/>
+            <br>
+            <input id="secundary-box" readonly class="box secundary-box" [(colorPicker)]="homeService.secundaryColor" [style.background]="homeService.secundaryColor"/>
+            <br>
+            <input id="tertiary-box" readonly class="box tertiary-box" [(colorPicker)]="homeService.tertiaryColor" [style.background]="homeService.tertiaryColor"/>
+
+        </div>
+        <div class="column-btn">
+            <div class="texto-paleta">
+                Click on the palette to change its color.</div>
+            <div class="texto-botoes">
+                <p>You can take unlimited tests!</p>
+            </div>
+            <div class="column">
+                <div class="btn" style="width: 80px;" (click)="resetarCor()"><i class="pi pi-sync" id="botao-return"></i></div>
+                <div class="btn" (click)="alterarCor()">Alterar</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="dica" id="dica">{{this.corPosicionada}}</div>
+
+</div>
+<div class="second-page">
+    <h2 class="label">View the generated examples below</h2>
+</div>
