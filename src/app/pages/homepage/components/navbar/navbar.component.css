@@ -27,6 +27,7 @@
     background-color: #242526;
     color: white;
     border-bottom: solid rgb(94, 94, 94) 1px;
+    z-index: 50;
 }
 
 .navbar-content{

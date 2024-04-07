@@ -2,6 +2,6 @@ main{
     margin-left: -1vw;
     background-color: rgb(245, 245, 245);
     width: 101vw;
-    overflow: auto;
-    position: fixed;
+    /* overflow: auto; */
+    /* position: fixed; */
 }

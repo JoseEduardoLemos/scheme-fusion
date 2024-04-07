@@ -49,6 +49,14 @@ export class HomeContentComponent implements OnInit {
     box = document.getElementById('tertiary-box');
     box?.setAttribute('style', `background-color:${this.homeService.tertiaryColor}`);
 
+    this.generateExemple();
+    this.scrollPage();
+  }
+
+  public generateExemple(){}
+
+  public scrollPage(){
+    window.scrollTo({ top: 650, behavior: 'smooth'});
   }
 
   public resetarCor() {

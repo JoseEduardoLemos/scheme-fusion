@@ -11,5 +11,5 @@ import { ColorPickerModule } from 'ngx-color-picker';
     imports: [RouterOutlet, HomepageComponent, ColorPickerModule]
 })
 export class AppComponent {
-  title = 'material-fusion';
+  title = 'scheme-fusion';
 }
