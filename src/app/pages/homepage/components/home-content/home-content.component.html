@@ -31,23 +31,139 @@
 
 </div>
 <div class="second-page">
-    <h2 class="label">View the generated examples below</h2>   
+    <h2 class="label">View the generated examples below</h2>
+    <img src="../../../../../assets/images/pointing.png" height="80px" style="opacity: 0.7;" alt="A Pointing down hand">
+    <div class="divisor"></div>
     <div class="navbar-example">
         <div class="logo-example">
-            LOGO
+            <p>LOGO</p>
         </div>
-
         <div class="search">
             <i class="pi pi-search" style="color: white;"></i>
-            
-            <div class="centered">
-                <div class="slash"></div>
-                <div class="btn-search">Search</div>
-            </div>
-        </div>
+            <div class="text">This is an example</div>
 
+        </div>
         <div class="profile centered">
             <i class="pi pi-user" style="color: white;"></i>
         </div>
     </div>
+    <div class="divisor"></div>
+
+
+    <div class="login-example">
+        <div class="title-login-container">
+            <div draggable="true" class="title-login">
+                <p>Your Brand</p>
+            </div>
+        </div>
+        <div class="login">
+    
+
+            <div class="row-login">
+                <div class="label-login">
+                    <p>Email:</p>
+                </div>
+                <div class="input-login"></div>
+            </div>
+
+           <div class="row-login">
+            <div class="label-login">
+                <p>Password:</p>
+            </div>
+            <div class="input-login"></div>
+           </div>
+
+           <div class="forgot-password">
+            <p>Forgot my password</p>
+           </div>
+
+           <div class="keep-2">
+                <p-checkbox></p-checkbox>
+                <p>Keep me Sign</p>
+           </div>
+            
+            <div class="login-btn">
+                <p>Login</p>
+            </div>
+            <div class="row-or">
+                <p>Or</p>
+            </div>
+            <div class="login-btn">
+                <p>Sign In</p>
+            </div>
+        </div>  
+    </div>
+
+    <div class="divisor"></div>
+
+    <div class="contact-example">
+        <div class="contact-title">
+            <h1>Contact Us</h1>
+        </div>
+
+        <div class="divisor"></div>         
+                <div *ngIf="isOne" class="column2">
+                    <div class="card-form">
+                        <i class="pi pi-user"></i>
+                        <div id="divisor-horizontal"></div>
+                        <p>Name</p>
+                    </div>
+                    <div class="card-form">
+                        <i class="pi pi-at"></i>
+                        <div id="divisor-horizontal"></div>
+                        <p>Email</p>
+                    </div>
+                    <div class="card-form" style="height: 15%; align-items: start;">
+                        <p>Message</p>
+                    </div>
+                    <div class="confirm-btn">
+                        <p>Confirm</p>
+                    </div>
+                </div>    
+          
+
+            <div class="divisor-horizontal"></div>
+            
+            <div *ngIf="!isOne" class="column2">
+                
+                <div class="input-2">
+                    <p>Name</p>
+                </div>
+
+                <div class="input-2">
+                    <p>Age</p>
+                </div>
+
+                <div class="input-2">
+                    <p>Phone Number</p>
+                </div>
+
+                <div class="text-accept">
+                    <p-checkbox></p-checkbox>
+                    <p>I Accept to Recvieve Promotional Messages</p>
+                </div>
+
+                <div class="confirm-btn-2">
+                    <p>Send</p>
+                </div>
+            </div>
+
+            <div class="previous-next-btns">
+                <div (click)="isOne ? null : clickNextPrev()" [ngClass]="{'btn-show' : !isOne, 'btn-hide' : isOne }" id="previous">
+                    <p>1</p>
+                </div>
+                <div (click)="isOne ? clickNextPrev() : null" [ngClass]="{'btn-show' : isOne, 'btn-hide' : !isOne }" id="next">
+                    <p>2</p>
+                </div>
+    
+            </div>
+
+        </div>
+        
+        
+ 
+
+    <div class="divisor"></div>
+
+
 </div>

@@ -1,8 +1,10 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, } from '@angular/core';
 import { ColorPickerModule, ColorPickerService } from 'ngx-color-picker';
 import { homeContentService } from './home-content.service';
 import { CommonModule } from '@angular/common';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+import { CheckboxModule } from 'primeng/checkbox';
 
 @Component({
   selector: 'app-home-content',
@@ -10,12 +12,19 @@ import { CommonModule } from '@angular/common';
   imports: [
     CommonModule,
     ColorPickerModule,
+    InputTextModule,
+    FormsModule,
+    CheckboxModule
   ],
   templateUrl: './home-content.component.html',
   styleUrl: './home-content.component.css'
 })
 
 export class HomeContentComponent implements OnInit {
+
+
+  public formModel : String = '';
+  public isOne : boolean = true;
 
   constructor(
     public homeService: homeContentService,
@@ -37,6 +46,10 @@ export class HomeContentComponent implements OnInit {
     this.box3 = document.getElementById('tertiary-box') as HTMLElement;    
 
     this.definirHoverDasCores();
+  }
+
+  public clickNextPrev(){
+    this.isOne = !this.isOne;
   }
 
   public alterarCor() {
