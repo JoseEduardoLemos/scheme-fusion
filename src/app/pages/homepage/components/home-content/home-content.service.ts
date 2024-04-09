@@ -16,4 +16,6 @@ export class homeContentService {
     public secundaryColor : any; 
     public tertiaryColor : any;
 
+    public backgroundColor : string = '';
+
 };

@@ -28,19 +28,29 @@
     </div>
     
     <div class="dica" id="dica">{{this.corPosicionada}}</div>
-
+    
 </div>
 <div class="second-page">
+
     <h2 class="label">View the generated examples below</h2>
     <img src="../../../../../assets/images/pointing.png" height="80px" style="opacity: 0.7;" alt="A Pointing down hand">
+
     <div class="divisor"></div>
-    <div class="navbar-example">
+
+    <!-- <div class="row-pallet">
+        <div *ngFor="let color of colors" (click)="copyColor(color)" [style.background-color]="color" class="showed-pallet">
+            {{color}}
+        </div>
+    </div>     -->
+
+
+    <div [style.background-color]=corDestaque class="navbar-example">
         <div class="logo-example">
             <p>LOGO</p>
         </div>
-        <div class="search">
-            <i class="pi pi-search" style="color: white;"></i>
-            <div class="text">This is an example</div>
+        <div [style.background-color]="corFundo" class="search">
+            <i class="pi pi-search" [style.color]=corTexto></i>
+            <div class="text" [style.color]=corTexto>This is an example</div>
 
         </div>
         <div class="profile centered">
@@ -50,31 +60,29 @@
     <div class="divisor"></div>
 
 
-    <div class="login-example">
+    <div [style.background-color]="corFundo" class="login-example">
         <div class="title-login-container">
-            <div draggable="true" class="title-login">
+            <div [style.background-color]=corDestaque draggable="true" class="title-login">
                 <p>Your Brand</p>
             </div>
         </div>
-        <div class="login">
-    
-
-            <div class="row-login">
-                <div class="label-login">
-                    <p>Email:</p>
-                </div>
-                <div class="input-login"></div>
+        <div [style.background-color]=corDestaque class="login">
+            
+            <div class="login-account">
+                <p>Login to Your Account</p>
             </div>
-
-           <div class="row-login">
-            <div class="label-login">
-                <p>Password:</p>
+            
+          
+            <div class="input-login">
+                <p>Email</p>
             </div>
-            <div class="input-login"></div>
-           </div>
+            
+            <div class="input-login">
+                <p>Password</p>
+            </div>
 
            <div class="forgot-password">
-            <p>Forgot my password</p>
+            <p>I forgot my password</p>
            </div>
 
            <div class="keep-2">
@@ -82,22 +90,24 @@
                 <p>Keep me Sign</p>
            </div>
             
-            <div class="login-btn">
+            <div [style.color]=corTexto [style.background-color]="corFundo" class="login-btn">
                 <p>Login</p>
             </div>
-            <div class="row-or">
-                <p>Or</p>
+            <div class="row-new-user">
+                <div class="hr"></div>
+                <p>New User?</p>
+                <div class="hr"></div>
             </div>
-            <div class="login-btn">
-                <p>Sign In</p>
+            <div class="sign-btn">
+                <p [style.color]=corDestaque>Sign In</p>
             </div>
         </div>  
     </div>
 
     <div class="divisor"></div>
 
-    <div class="contact-example">
-        <div class="contact-title">
+    <div [style.background-color]="corFundo" class="contact-example">
+        <div [style.background-color]=corDestaque [style.color]="corTextoAux" class="contact-title">
             <h1>Contact Us</h1>
         </div>
 
@@ -116,8 +126,8 @@
                     <div class="card-form" style="height: 15%; align-items: start;">
                         <p>Message</p>
                     </div>
-                    <div class="confirm-btn">
-                        <p>Confirm</p>
+                    <div [style.background-color]="corDestaque" class="confirm-btn">
+                        <p [style.color]="corTextoAux">Confirm</p>
                     </div>
                 </div>    
           
@@ -143,8 +153,8 @@
                     <p>I Accept to Recvieve Promotional Messages</p>
                 </div>
 
-                <div class="confirm-btn-2">
-                    <p>Send</p>
+                <div [style.background-color]="corDestaque" class="confirm-btn-2">
+                    <p [style.color]="corTextoAux">Send</p>
                 </div>
             </div>
 

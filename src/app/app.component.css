@@ -3,5 +3,6 @@ main{
     background-color: rgb(245, 245, 245);
     width: 101vw;
     /* overflow: auto; */
+    overflow-x: auto;
     /* position: fixed; */
 }

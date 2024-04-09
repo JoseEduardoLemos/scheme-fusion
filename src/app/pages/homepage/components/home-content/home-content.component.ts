@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
+import chroma, { Color } from "chroma-js";
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-home-content',
@@ -14,7 +16,7 @@ import { CheckboxModule } from 'primeng/checkbox';
     ColorPickerModule,
     InputTextModule,
     FormsModule,
-    CheckboxModule
+    CheckboxModule,
   ],
   templateUrl: './home-content.component.html',
   styleUrl: './home-content.component.css'
@@ -25,6 +27,11 @@ export class HomeContentComponent implements OnInit {
 
   public formModel : String = '';
   public isOne : boolean = true;
+  public colors : Array<String> = [];
+  public corTexto : string = '#353535';
+  public corTextoAux : string = '';
+  public corDestaque : string = '';
+  public corFundo : string = '';
 
   constructor(
     public homeService: homeContentService,
@@ -62,14 +69,80 @@ export class HomeContentComponent implements OnInit {
     box = document.getElementById('tertiary-box');
     box?.setAttribute('style', `background-color:${this.homeService.tertiaryColor}`);
 
-    this.generateExemple();
     this.scrollPage();
+    this.generateExemple();
   }
 
-  public generateExemple(){}
+  public generateExemple(){
+    this.colors = chroma.scale([this.homeService.primaryColor, this.homeService.secundaryColor, this.homeService.tertiaryColor]).mode('lch').colors(16);
+    let maxContrast = 0;
+    let corMaisClara;
+    let corMaisEscura;
+
+    for (const color of this.colors){
+      const constraste = chroma.contrast(color as string, 'black');
+      if(constraste > maxContrast){
+        maxContrast = constraste;
+        corMaisClara = color;
+      } else{
+        corMaisEscura = color;
+      }
+    }
+    this.corFundo = corMaisClara as string;
+    this.corDestaque = corMaisEscura as string;
+
+    let luminosidade = chroma(corMaisClara as string).luminance();
+    if(luminosidade > 0.5){
+      this.corTexto = '#353535';
+    } else {
+      this.corTexto = 'white';
+    }
+
+    luminosidade = chroma(this.corDestaque as string).luminance();
+    if(luminosidade > 0.5){
+      this.corTextoAux = '#353535';
+    } else {
+      this.corTextoAux = 'white';
+    }
+
+    this.homeService.backgroundColor = corMaisClara as string;
+    let bg1 = document.getElementById('bg-1');
+    bg1!.style.backgroundColor = corMaisClara as string;
+
+    bg1 = document.getElementById('bg-2');
+    bg1!.style.backgroundColor = corMaisClara as string;
+
+    bg1 = document.getElementById('bg-3');
+    bg1!.style.backgroundColor = corMaisClara as string;
+
+    bg1 = document.getElementById('bg-4');
+    bg1!.style.backgroundColor = corMaisClara as string;
+
+    let destaque = document.getElementById('destaque-1');
+    destaque!.style.backgroundColor = corMaisEscura as string;
+
+    destaque = document.getElementById('destaque-2');
+    destaque!.style.backgroundColor = corMaisEscura as string;
+
+    destaque = document.getElementById('destaque-3');
+    destaque!.style.backgroundColor = corMaisEscura as string;
+
+    destaque = document.getElementById('destaque-4');
+    destaque!.style.backgroundColor = corMaisEscura as string;
+
+
+    // console.log(corMaisClara)
+    // const sortedColors = this.colors.map(color => chroma(color));
+    
+    // this.colors.sort((a, b) => chroma(a).luminance() - chroma(b).luminance());
+  }
 
   public scrollPage(){
     window.scrollTo({ top: 650, behavior: 'smooth'});
+  }
+
+  public copyColor(color : String){
+    navigator.clipboard.writeText(color as string);
   }
 
   public resetarCor() {
