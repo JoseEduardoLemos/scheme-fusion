@@ -32,6 +32,7 @@ export class HomeContentComponent implements OnInit {
   public corTextoAux : string = '';
   public corDestaque : string = '';
   public corFundo : string = '';
+  public exempleGenerated : boolean = false;
 
   constructor(
     public homeService: homeContentService,
@@ -74,6 +75,7 @@ export class HomeContentComponent implements OnInit {
   }
 
   public generateExemple(){
+    this.exempleGenerated = true;
     this.colors = chroma.scale([this.homeService.primaryColor, this.homeService.secundaryColor, this.homeService.tertiaryColor]).mode('lch').colors(16);
     let maxContrast = 0;
     let corMaisClara;

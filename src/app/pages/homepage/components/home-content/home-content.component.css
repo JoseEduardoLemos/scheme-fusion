@@ -1,8 +1,7 @@
 .home-content{
-    padding-left: 5vw;
-    padding-right: 5vw;
     background-color: transparent;
     height: 80vh;
+    width: 100vw;
 }
 
 .label{
@@ -12,8 +11,7 @@
 }
 
 #botao-return:hover{
-    color: #242526;
-    
+    color: #242526; 
 }
 
 #botao-return{
@@ -25,6 +23,11 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+}
+
+.hidded{
+    visibility: hidden;
+    position: fixed;
 }
 
 .btn:hover{
@@ -83,7 +86,6 @@
     border-radius: 10px;
     box-shadow: none;
     box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.13);
-
     transition: box-shadow 320ms;
 }
 
@@ -117,12 +119,9 @@
 
     border-top: solid rgb(94, 94, 94) 1px;
     height: 70%;
-    width: 100vw;
+    width: 100%;
     background : linear-gradient(110deg, #242526 80%, #2f2f31 96%);
-    margin-left: -6vw;
     padding-left: 6vw;
-    /* position: fixed; */
-    overflow-x: auto;
 
 }
 .column-btn{
@@ -257,11 +256,8 @@
     background-color: #242526;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-
     border-bottom: solid rgb(94, 94, 94) 1px;
-
     box-shadow: 0px 12px 15px 0px rgb(179, 179, 179);
-
 }
 
 .text{
@@ -276,16 +272,13 @@
 
 .logo-example{
     color: white;
-
     font-family: 'Anton';
     font-size: 28px;
-
     transition: color 320ms;
 }
 .slash{
     height: 50%;
     width: 15px;
-
 }
 
 .centered{
@@ -324,7 +317,6 @@
     height: 60%;
     background-color: #404041;
     border-radius: 12px;
-    /* border-bottom: solid 1px white; */
 }
 
 .profile:hover{
@@ -336,7 +328,6 @@
     height: 50%;
     border-radius: 20px;
     border: solid 1px white;
-
     transition: border 320ms;
 }
 
@@ -345,7 +336,6 @@
     height: 60%;
     background-color: rgb(1, 62, 97);
     box-shadow: 0px 12px 15px 0px rgb(179, 179, 179);
-
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -355,7 +345,6 @@
 .title-login-container{
     width: 50%;
     height: 100%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -364,7 +353,6 @@
 .title-login:hover{
     background-color:rgba(153, 232, 252, 0.288);
     box-shadow: 0px 200px 30px -20px rgba(0, 0, 0, 0.13);    
-    
     cursor: pointer;
     font-size: 50px;
     border-radius: 10%;
@@ -378,15 +366,12 @@
     background-color: rgba(136, 208, 226, 0.199);
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.322);    
     color: white;
-
-
     height: 35%;
     margin: 10%;
     width: 40%;
     font-size: 40px;
     font-weight: 500;
     border-radius: 5%;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -401,8 +386,6 @@
     border-radius: 15px;
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.322);    
     background-color: rgba(136, 208, 226, 0.534);
-
-
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -419,7 +402,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     margin-top: 15px;
-
     font-family: 'Montserrat';
     color: white;
     font-weight: 700;
@@ -504,7 +486,6 @@
     display: flex;
     justify-content: start;
     align-items: center;
-
     font-family: 'Montserrat';
     font-size: 14px;
     font-weight: 500;
@@ -532,7 +513,6 @@
     height: 7%;
     background-color: #015586;
     border-radius: 12px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -554,11 +534,9 @@
     height: 7%;
     background-color: #ffffff;
     border-radius: 12px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: box-shadow 320ms;
 }
 
@@ -569,14 +547,12 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-
     width: 84%;
     height: 45%;
     background-color: #7cb1ac;
 
     border-radius: 12px;
     box-shadow: 0px 12px 15px 0px rgb(179, 179, 179);
-
 }
 
 .contact-title{
@@ -598,16 +574,12 @@
     height: 5%;
     padding: 10px;
     color: #4446478c;
-
     border-radius: 20px;
     background-color: white;
     margin-top: 10px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
-
-
     font-family: 'Montserrat';
     font-size: 15px;
     font-weight: 600;
@@ -632,15 +604,12 @@
     padding: 10px;
     height: 5%;
     border-radius: 20px;
-
     background-color: #5c849b;
     color: rgb(231, 229, 229);
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
     font-family: 'Montserrat';
     font-size: 15px;
     font-weight: 600;
@@ -666,7 +635,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    
     background-color: rgba(0, 0, 0, 0.144);
     border-radius: 12px;
     margin-bottom: 15px;
@@ -674,7 +642,6 @@
 
 .input-2{
     font-family: 'Montserrat';
-
     margin: 10px;
     width: 90%;
     height: 10%;
@@ -683,7 +650,6 @@
     font-size: 15px;
     font-weight: 600;
     border-radius: 5px;
-
     display: flex;
     justify-content: start;
     align-items: center;
@@ -721,11 +687,8 @@
     border-radius: 8px;
     color: white;
     background-color: #346b9b;
-
     transition: box-shadow 320ms, background-color 320ms;
 }
-
-
 
 .previous-next-btns{
     display: flex;
@@ -733,26 +696,21 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 35px;
-
 }
 
 .btn-show:hover{
     cursor: pointer;
     box-shadow:  0px 8px 10px 0px rgba(0, 0, 0, 0.082);
-
 }
 
 .btn-hide{
     width: 40%;
     height: 100%;
-
     background-color: rgba(255, 255, 255, 0.432);
     border-radius: 8px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-family: 'Montserrat';
     font-weight: bolder;
     border: 1px solid rgba(128, 128, 128, 0.603);
@@ -762,34 +720,15 @@
     transition: box-shadow 320ms;
     width: 40%;
     height: 100%;
-
     background-color: white;
     border-radius: 8px;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     font-family: 'Montserrat';
     font-weight: bolder;
     border: 1px solid rgba(128, 128, 128, 0.603);
-
 }
-
-.activated-box{
-
-}
-
-.desactivated-box{
-
-}
-
-
-
-
-
-
-
 
 .showed-pallet:hover{
     cursor:pointer;
@@ -821,9 +760,6 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-
-
-
 
 .background-class{
     background-color: none;

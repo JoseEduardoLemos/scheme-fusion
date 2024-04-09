@@ -30,7 +30,7 @@
     <div class="dica" id="dica">{{this.corPosicionada}}</div>
     
 </div>
-<div class="second-page">
+<div [ngClass]="{'hidded' : !exempleGenerated, 'second-page' : exempleGenerated}">
 
     <h2 class="label">View the generated examples below</h2>
     <img src="../../../../../assets/images/pointing.png" height="80px" style="opacity: 0.7;" alt="A Pointing down hand">
