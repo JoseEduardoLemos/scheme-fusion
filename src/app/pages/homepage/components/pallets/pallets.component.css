@@ -44,11 +44,13 @@
 
 .primary-box:focus{
     cursor: pointer;
-    margin-top: -180px;
+    margin-top: -120px;
+    margin-left: 25px;
     box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.13);
 }
 .primary-box:hover{
-    margin-top: -180px;
+    margin-top: -120px;
+    margin-left: 25px;
     box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.13);
 }
 
@@ -56,28 +58,32 @@
     background-color: #5c849b;
     border: none;
     z-index: 5;
-    margin-top: -100px;
-    transition: margin-top 350ms, box-shadow 350ms;
+    margin-top: -50px;
+    transform: rotate(85deg);
+
+    transition: margin-left 350ms, margin-top 350ms, box-shadow 350ms;
 }
 
 .secundary-box:focus{
     cursor: pointer;
-    margin-top: -130px;
+    margin-top: -120px;
     margin-left: -50px;
     box-shadow: -15px 15px 15px 0px rgba(0, 0, 0, 0.13);
 }
 .secundary-box:hover{
-    margin-top: -130px;
+    margin-top: -120px;
     margin-left: -50px;
     box-shadow: -15px 15px 15px 0px rgba(0, 0, 0, 0.13);
 }
 
 .secundary-box{
-    background-color: #435b64;
+    background-color: #2a343d;
     margin-left: -100px;
-    margin-top: -50px;
+    margin-top: -40px;
     border: none;
     z-index: 4;
+    transform: rotate(95deg);
+
     transition: margin-top 350ms, margin-left 350ms, box-shadow 350ms;
 }
 

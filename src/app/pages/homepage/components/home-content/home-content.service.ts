@@ -9,8 +9,8 @@ export class homeContentService {
     constructor()
     {
         this.primaryColor = '#5c849b';
-        this.secundaryColor = '#435b64';
-        this.tertiaryColor = '#2a343d';
+        this.tertiaryColor = '#435b64';
+        this.secundaryColor = '#2a343d';
     }   
 
     public primaryColor : any;
@@ -53,20 +53,20 @@ export class homeContentService {
         box?.setAttribute('style', 'background-color: #5c849b');
     
         box = document.getElementById('secundary-box');
-        box?.setAttribute('style', 'background-color: #435b64');
+        box?.setAttribute('style', 'background-color: #2a343d');
     
         box = document.getElementById('tertiary-box');
-        box?.setAttribute('style', 'background-color: #2a343d');
+        box?.setAttribute('style', 'background-color: #435b64');
 
         this.primaryColor = '#5c849b';
-        this.secundaryColor = '#435b64';
-        this.tertiaryColor = '#2a343d';
+        this.secundaryColor = '#2a343d';
+        this.tertiaryColor = '#435b64';
     
       }
 
       public generateExemple(){
         this.exempleGenerated = true;
-        this.colors = chroma.scale([this.primaryColor, this.secundaryColor, this.tertiaryColor]).mode('lch').colors(16);
+        this.colors = chroma.scale([this.primaryColor, this.secundaryColor]).mode('lch').colors(16);
         let maxContrast = 0;
         let corMaisClara;
         let corMaisEscura;

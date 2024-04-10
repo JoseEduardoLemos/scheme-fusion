@@ -10,31 +10,32 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { PalletsComponent } from '../pallets/pallets.component';
 import { NavbarExampleComponent } from '../navbar-example/navbar-example.component';
+import { LoginExampleComponent } from '../login-example/login-example.component';
+import { ContactExampleComponent } from "../contact-example/contact-example.component";
 
 @Component({
-  selector: 'app-home-content',
-  standalone: true,
-  imports: [
-    CommonModule,
-    InputTextModule,
-    FormsModule,
-    CheckboxModule,
-    DropdownModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    PalletsComponent,
-    NavbarExampleComponent  
-  ],
-  
-  templateUrl: './home-content.component.html',
-  styleUrl: './home-content.component.css'
+    selector: 'app-home-content',
+    standalone: true,
+    templateUrl: './home-content.component.html',
+    styleUrl: './home-content.component.css',
+    imports: [
+        CommonModule,
+        InputTextModule,
+        FormsModule,
+        DropdownModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        PalletsComponent,
+        NavbarExampleComponent,
+        LoginExampleComponent,
+        ContactExampleComponent
+    ]
 })
 
 export class HomeContentComponent {
 
 
   public formModel : String = '';
-  public isOne : boolean = true;
 
   options = [
     { value: 1, label: "Only One" },
@@ -73,10 +74,6 @@ export class HomeContentComponent {
     return this.homeService.corTextoAux;
   }
 
-
-  public clickNextPrev(){
-    this.isOne = !this.isOne;
-  }
 
 
   public copyColor(color : String){

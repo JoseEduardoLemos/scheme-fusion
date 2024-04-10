@@ -23,119 +23,15 @@
     
     <div class="divisor"></div>
 
-
-    <div [style.background-color]="corFundo" class="login-example">
-        <div class="title-login-container">
-            <div [style.background-color]=corDestaque draggable="true" class="title-login">
-                <p>Your Brand</p>
-            </div>
-        </div>
-        <div [style.background-color]=corDestaque class="login">
-            
-            <div class="login-account">
-                <p>Login to Your Account</p>
-            </div>
-            
-          
-            <div class="input-login">
-                <p>Email</p>
-            </div>
-            
-            <div class="input-login">
-                <p>Password</p>
-            </div>
-
-           <div class="forgot-password">
-            <p>I forgot my password</p>
-           </div>
-
-           <div class="keep-2">
-                <p-checkbox></p-checkbox>
-                <p>Keep me Sign</p>
-           </div>
-            
-            <div [style.color]=corTexto [style.background-color]="corFundo" class="login-btn">
-                <p>Login</p>
-            </div>
-            <div class="row-new-user">
-                <div class="hr"></div>
-                <p>New User?</p>
-                <div class="hr"></div>
-            </div>
-            <div class="sign-btn">
-                <p [style.color]=corDestaque>Sign In</p>
-            </div>
-        </div>  
+    <div class="login-contact-example-container">
+        <app-login-example></app-login-example>
     </div>
 
     <div class="divisor"></div>
 
-    <div [style.background-color]="corFundo" class="contact-example">
-        <div [style.background-color]=corDestaque [style.color]="corTextoAux" class="contact-title">
-            <h1>Contact Us</h1>
-        </div>
-
-        <div class="divisor"></div>         
-                <div *ngIf="isOne" class="column2">
-                    <div class="card-form">
-                        <i class="pi pi-user"></i>
-                        <div id="divisor-horizontal"></div>
-                        <p>Name</p>
-                    </div>
-                    <div class="card-form">
-                        <i class="pi pi-at"></i>
-                        <div id="divisor-horizontal"></div>
-                        <p>Email</p>
-                    </div>
-                    <div class="card-form" style="height: 15%; align-items: start;">
-                        <p>Message</p>
-                    </div>
-                    <div [style.background-color]="corDestaque" class="confirm-btn">
-                        <p [style.color]="corTextoAux">Confirm</p>
-                    </div>
-                </div>    
-          
-
-            <div class="divisor-horizontal"></div>
-            
-            <div *ngIf="!isOne" class="column2">
-                
-                <div class="input-2">
-                    <p>Name</p>
-                </div>
-
-                <div class="input-2">
-                    <p>Age</p>
-                </div>
-
-                <div class="input-2">
-                    <p>Phone Number</p>
-                </div>
-
-                <div class="text-accept">
-                    <p-checkbox></p-checkbox>
-                    <p>I Accept to Recvieve Promotional Messages</p>
-                </div>
-
-                <div [style.background-color]="corDestaque" class="confirm-btn-2">
-                    <p [style.color]="corTextoAux">Send</p>
-                </div>
-            </div>
-
-            <div class="previous-next-btns">
-                <div (click)="isOne ? null : clickNextPrev()" [ngClass]="{'btn-show' : !isOne, 'btn-hide' : isOne }" id="previous">
-                    <p>1</p>
-                </div>
-                <div (click)="isOne ? clickNextPrev() : null" [ngClass]="{'btn-show' : isOne, 'btn-hide' : !isOne }" id="next">
-                    <p>2</p>
-                </div>
-    
-            </div>
-
-        </div>
-        
-        
- 
+    <div class="login-contact-example-container">
+        <app-contact-example></app-contact-example>
+    </div>
 
     <div class="divisor"></div>
 

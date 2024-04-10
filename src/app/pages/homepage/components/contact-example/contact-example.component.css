@@ -1,0 +1,172 @@
+.contact-example{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #7cb1ac;
+
+    border-radius: 12px;
+    box-shadow: 0px 12px 15px 0px rgb(179, 179, 179);
+}
+
+.contact-title{
+    background-color: #435b64;
+    width: 100%;
+    height: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    color: rgb(209, 209, 209);
+}
+
+.column2{
+    height: 70%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.144);
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.card-form{
+    width: 90%;
+    height: 5%;
+    padding: 10px;
+    color: #4446478c;
+    border-radius: 20px;
+    background-color: white;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.divisor-horizontal{
+    width: 3%;
+}
+
+.confirm-btn:hover{
+    cursor: pointer;
+    background-color:rgb(31, 98, 119);
+    color: white;
+
+}
+.confirm-btn{
+    margin-top: 25px;
+    width: 90%;
+    padding: 10px;
+    height: 5%;
+    border-radius: 20px;
+    background-color: #5c849b;
+    color: rgb(231, 229, 229);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: background-color 320ms, color 320ms;
+}
+.input-2{
+    font-family: 'Montserrat';
+    margin: 10px;
+    width: 90%;
+    height: 10%;
+    background-color: white;
+    color: #c3c3c4;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    padding-left: 12px;
+}
+.text-accept{
+    color: white;
+    margin: 10px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat'; 
+    font-size: 15px;
+}
+.confirm-btn-2:hover{
+    cursor:pointer;
+    background-color: #4486be;
+    box-shadow: 0px 10px 8px 0px rgba(128, 128, 128, 0.075);
+}
+
+.confirm-btn-2{
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    border-radius: 8px;
+    color: white;
+    background-color: #346b9b;
+    transition: box-shadow 320ms, background-color 320ms;
+}
+.previous-next-btns{
+    display: flex;
+    width: 10%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.btn-show:hover{
+    cursor: pointer;
+    box-shadow:  0px 8px 10px 0px rgba(0, 0, 0, 0.082);
+}
+
+.btn-hide{
+    width: 40%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.432);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-weight: bolder;
+    border: 1px solid rgba(128, 128, 128, 0.603);
+}
+
+.btn-show{
+    transition: box-shadow 320ms;
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat';
+    font-weight: bolder;
+    border: 1px solid rgba(128, 128, 128, 0.603);
+}
+
+.divisor{
+    height: 10%;
+}
