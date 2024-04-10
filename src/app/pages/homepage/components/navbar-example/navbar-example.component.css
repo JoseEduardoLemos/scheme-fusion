@@ -1,0 +1,67 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    background-color: #242526;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: solid rgb(94, 94, 94) 1px;
+    box-shadow: 0px 12px 15px 0px rgb(179, 179, 179);
+}
+
+.logo-example:hover{
+    cursor: pointer;
+    color: #bde7ff;
+}
+
+.logo-example{
+    color: white;
+    font-family: 'Anton';
+    font-size: 28px;
+    transition: color 320ms;
+}
+
+.search{
+    font-family: "Montserrat";
+    font-size: 14px;
+    color: white ;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    padding-left: 15px;
+    padding-right: 10px;
+    width: 50%;
+    height: 60%;
+    background-color: #404041;
+    border-radius: 12px;
+}
+
+.text{
+    padding-left: 25px;
+    width: 85%;
+    color: rgba(255, 255, 255, 0.432);
+ }
+
+ .profile:hover{
+    cursor: pointer;
+    border: solid 1px rgb(185, 250, 255);
+}
+.profile{
+    width: 2.5%;
+    height: 50%;
+    border-radius: 20px;
+    border: solid 1px white;
+    transition: border 320ms;
+}
+
+.centered{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}

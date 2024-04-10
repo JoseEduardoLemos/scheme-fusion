@@ -1,4 +1,5 @@
 import { Injectable, } from "@angular/core";
+import chroma from "chroma-js";
 
 
 @Injectable({
@@ -16,6 +17,116 @@ export class homeContentService {
     public secundaryColor : any; 
     public tertiaryColor : any;
 
+    public corPosicionada : string = '';
+
     public backgroundColor : string = '';
+
+    public colors : Array<String> = [];
+    public exempleGenerated : boolean = false;  
+    public corTexto : string = '#353535';
+    public corTextoAux : string = '';
+    public corDestaque : string = '';
+    public corFundo : string = '';
+
+
+    public alterarCor() {
+        let box = document.getElementById('primary-box');
+        box?.setAttribute('style', `background-color:${this.primaryColor}`);
+    
+        box = document.getElementById('secundary-box');
+        box?.setAttribute('style', `background-color:${this.secundaryColor}`);
+    
+        box = document.getElementById('tertiary-box');
+        box?.setAttribute('style', `background-color:${this.tertiaryColor}`);
+    
+        this.scrollPage();
+        this.generateExemple();
+      }
+
+      public scrollPage(){
+        window.scrollTo({ top: 650, behavior: 'smooth'});
+      }
+
+    public resetarCor() {
+
+        let box = document.getElementById('primary-box');
+        box?.setAttribute('style', 'background-color: #5c849b');
+    
+        box = document.getElementById('secundary-box');
+        box?.setAttribute('style', 'background-color: #435b64');
+    
+        box = document.getElementById('tertiary-box');
+        box?.setAttribute('style', 'background-color: #2a343d');
+
+        this.primaryColor = '#5c849b';
+        this.secundaryColor = '#435b64';
+        this.tertiaryColor = '#2a343d';
+    
+      }
+
+      public generateExemple(){
+        this.exempleGenerated = true;
+        this.colors = chroma.scale([this.primaryColor, this.secundaryColor, this.tertiaryColor]).mode('lch').colors(16);
+        let maxContrast = 0;
+        let corMaisClara;
+        let corMaisEscura;
+    
+        for (const color of this.colors){
+          const constraste = chroma.contrast(color as string, 'black');
+          if(constraste > maxContrast){
+            maxContrast = constraste;
+            corMaisClara = color;
+          } else{
+            corMaisEscura = color;
+          }
+        }
+        this.corFundo = corMaisClara as string;
+        this.corDestaque = corMaisEscura as string;
+    
+        let luminosidade = chroma(corMaisClara as string).luminance();
+        if(luminosidade > 0.5){
+          this.corTexto = '#353535';
+        } else {
+          this.corTexto = 'white';
+        }
+    
+        luminosidade = chroma(this.corDestaque as string).luminance();
+        if(luminosidade > 0.5){
+          this.corTextoAux = '#353535';
+        } else {
+          this.corTextoAux = 'white';
+        }
+    
+        this.backgroundColor = corMaisClara as string;
+        let bg1 = document.getElementById('bg-1');
+        bg1!.style.backgroundColor = corMaisClara as string;
+    
+        bg1 = document.getElementById('bg-2');
+        bg1!.style.backgroundColor = corMaisClara as string;
+    
+        bg1 = document.getElementById('bg-3');
+        bg1!.style.backgroundColor = corMaisClara as string;
+    
+        bg1 = document.getElementById('bg-4');
+        bg1!.style.backgroundColor = corMaisClara as string;
+    
+        let destaque = document.getElementById('destaque-1');
+        destaque!.style.backgroundColor = corMaisEscura as string;
+    
+        destaque = document.getElementById('destaque-2');
+        destaque!.style.backgroundColor = corMaisEscura as string;
+    
+        destaque = document.getElementById('destaque-3');
+        destaque!.style.backgroundColor = corMaisEscura as string;
+    
+        destaque = document.getElementById('destaque-4');
+        destaque!.style.backgroundColor = corMaisEscura as string;
+    
+    
+        // console.log(corMaisClara)
+        // const sortedColors = this.colors.map(color => chroma(color));
+        
+        // this.colors.sort((a, b) => chroma(a).luminance() - chroma(b).luminance());
+      }
 
 };

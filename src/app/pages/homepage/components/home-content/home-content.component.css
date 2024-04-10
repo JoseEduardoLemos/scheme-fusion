@@ -1,7 +1,7 @@
 .home-content{
     background-color: transparent;
-    height: 80vh;
-    width: 100vw;
+    height: 80%;
+    width: 100%;
 }
 
 .label{
@@ -10,220 +10,40 @@
     color: #353535;
 }
 
-#botao-return:hover{
-    color: #242526; 
-}
 
-#botao-return{
-    color: rgb(245, 245, 245);
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-}
 
 .hidded{
     visibility: hidden;
     position: fixed;
 }
 
-.btn:hover{
-    cursor: pointer;
-    background-color: rgb(245, 245, 245);
-    color: #353535;
-}
 
-.btn{
-    user-select: none;
-    height: 50px;
-    width: 120px;
 
-    border-radius: 5px;
-    background-color: #242526;
-    font-weight: 600;
-    font-family: "Montserrat";
-    color: rgb(245, 245, 245);
-    border: solid 0.5px rgb(245, 245, 245);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px;
-    z-index: 11;
-
-    transition: background-color 350ms, color 350ms, border 350ms;
-}
 .row{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
+    flex-direction: row;    
     align-items: center;
     justify-content: space-around;
-}
-.column{
-    height: 10vh;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.box:hover{
-    cursor: pointer;
-}
-.box:focus{
-    outline: none;
-}
-
-.box{
-    height: 300px;
-    width: 300px;
-    border-radius: 10px;
-    box-shadow: none;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.13);
-    transition: box-shadow 320ms;
-}
-
-.boxes{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    height: 100%;
-    width: 50%;
-}
-
-.texto-paleta{
-    margin-left: -30px;    
-    color: rgb(245, 245, 245);
-    font-weight: 600;
-    font-size: 30px;
-    font-family: "Montserrat";
-}
-
-.boxes-buttons{
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-
-    border-top: solid rgb(94, 94, 94) 1px;
-    height: 70%;
-    width: 100%;
-    background : linear-gradient(110deg, #242526 80%, #2f2f31 96%);
-    padding-left: 6vw;
-
-}
-.column-btn{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-
-    padding-right: 20%;
-}
-.texto-botoes{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    color: rgb(245, 245, 245);
-    font-weight: 600;
-    font-size: 22px;
-    font-family: "Montserrat";
-}
-
-.primary-box:focus{
-    cursor: pointer;
-    margin-top: -180px;
-    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.13);
-}
-.primary-box:hover{
-    margin-top: -180px;
-    box-shadow: 0px 15px 15px 0px rgba(0, 0, 0, 0.13);
-}
-
-.primary-box{
-    background-color: #5c849b;
-    border: none;
-    z-index: 5;
-    margin-top: -100px;
-    transition: margin-top 350ms, box-shadow 350ms;
-}
-
-.secundary-box:focus{
-    cursor: pointer;
-    margin-top: -130px;
-    margin-left: -50px;
-    box-shadow: -15px 15px 15px 0px rgba(0, 0, 0, 0.13);
-}
-.secundary-box:hover{
-    margin-top: -130px;
-    margin-left: -50px;
-    box-shadow: -15px 15px 15px 0px rgba(0, 0, 0, 0.13);
-}
-
-.secundary-box{
-    background-color: #435b64;
-    margin-left: -100px;
-    margin-top: -50px;
-    border: none;
-    z-index: 4;
-    transition: margin-top 350ms, margin-left 350ms, box-shadow 350ms;
+    height: 10%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 
-.tertiary-box:focus{
-    cursor: pointer;
-    margin-left: -50px;
-    box-shadow: -15px 8px 15px 0px rgba(0, 0, 0, 0.13);
-}
-.tertiary-box:hover{
-    margin-left: -50px;
-    box-shadow: -15px 8px 15px 0px rgba(0, 0, 0, 0.13);
-}
 
-.tertiary-box{
-    background-color: #2a343d;
-    margin-left: -150px;
-    z-index: 3;
-    border: none;
-    transition: margin-left 350ms, box-shadow 350ms;
+
+
+.box-selector{
+    height: 10%;
+    z-index: 99;
+    color: black;
 }
 
-.dica{
-    visibility: hidden;
-    width: 120px;
-    height: 30px;
-    background-color: rgb(245, 245, 245);;
-    border-radius: 8px;
-    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.144);
 
-    color: rgb(53, 53, 53);
-    font-weight: 600;
-    font-size: small;
-    font-family: "Montserrat";
-    
-    padding: 2px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-    left: 50px;
-    position: fixed;
-    top: 50px;
+.navbar-example-container{
+    width: 85%;
 }
 
 .second-page{
@@ -234,59 +54,24 @@
     align-items: center;
 
     height: 250vh;
-    width: 100vw;
+    width: 100%;
+
 }
 
 .divisor{
     height: 10%;
 }
 
-.navbar-example{
-    display: flex;
-    flex-direction: row;
-    justify-items: center;
-    justify-content: space-between;
-    align-items: center;
 
-    padding-left: 2%;
-    padding-right: 2%;
 
-    width: 80%;
-    height: 7vh;
-    background-color: #242526;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: solid rgb(94, 94, 94) 1px;
-    box-shadow: 0px 12px 15px 0px rgb(179, 179, 179);
-}
 
-.text{
-   padding-left: 25px;
-   width: 85%;
-   color: rgba(255, 255, 255, 0.432);
-}
-.logo-example:hover{
-    cursor: pointer;
-    color: #bde7ff;
-}
 
-.logo-example{
-    color: white;
-    font-family: 'Anton';
-    font-size: 28px;
-    transition: color 320ms;
-}
 .slash{
     height: 50%;
     width: 15px;
 }
 
-.centered{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-}
+
 
 .input{
     width: 80%;
@@ -303,33 +88,9 @@
     font-size: 12px;
 }
 
-.search{
-    font-family: "Montserrat";
-    font-size: 14px;
-    color: white ;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    display: flex;
-    padding-left: 15px;
-    padding-right: 10px;
-    width: 50%;
-    height: 60%;
-    background-color: #404041;
-    border-radius: 12px;
-}
 
-.profile:hover{
-    cursor: pointer;
-    border: solid 1px rgb(185, 250, 255);
-}
-.profile{
-    width: 2.5%;
-    height: 50%;
-    border-radius: 20px;
-    border: solid 1px white;
-    transition: border 320ms;
-}
+
+
 
 .login-example{
     width: 84%;
