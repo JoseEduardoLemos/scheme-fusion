@@ -12,6 +12,8 @@ import { PalletsComponent } from '../pallets/pallets.component';
 import { NavbarExampleComponent } from '../navbar-example/navbar-example.component';
 import { LoginExampleComponent } from '../login-example/login-example.component';
 import { ContactExampleComponent } from "../contact-example/contact-example.component";
+import { SidebarComponent } from '../sidebar/sidebar.component';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
     selector: 'app-home-content',
@@ -28,7 +30,8 @@ import { ContactExampleComponent } from "../contact-example/contact-example.comp
         PalletsComponent,
         NavbarExampleComponent,
         LoginExampleComponent,
-        ContactExampleComponent
+        ContactExampleComponent,
+        SidebarComponent
     ]
 })
 
@@ -81,6 +84,4 @@ export class HomeContentComponent {
   }
 
   
-  
-
 }

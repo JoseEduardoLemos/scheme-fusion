@@ -1,5 +1,16 @@
 import { Injectable, } from "@angular/core";
 import chroma from "chroma-js";
+import { first } from "rxjs";
+
+
+
+export class Exemple {
+  constructor(
+    public sequence : number,
+    public first : string,
+    public second : string,
+  ){}
+}
 
 
 @Injectable({
@@ -12,6 +23,8 @@ export class homeContentService {
         this.tertiaryColor = '#435b64';
         this.secundaryColor = '#2a343d';
     }   
+
+    public sidebarVisible : boolean = false;
 
     public primaryColor : any;
     public secundaryColor : any; 
@@ -29,7 +42,10 @@ export class homeContentService {
     public corFundo : string = '';
 
 
+    public exemples : Array<Exemple> = new Array<Exemple>();
+
     public alterarCor() {
+
         let box = document.getElementById('primary-box');
         box?.setAttribute('style', `background-color:${this.primaryColor}`);
     
@@ -39,8 +55,19 @@ export class homeContentService {
         box = document.getElementById('tertiary-box');
         box?.setAttribute('style', `background-color:${this.tertiaryColor}`);
     
-        this.scrollPage();
+        this.incrementExemples();
         this.generateExemple();
+        this.scrollPage();
+      }
+
+      private incrementExemples(){
+        console.log(this.primaryColor);
+        console.log(this.secundaryColor)
+
+
+      if(this.exemples.length < 1 || this.exemples[this.exemples.length - 1].first !== this.primaryColor || this.exemples[this.exemples.length - 1].second !== this.secundaryColor){
+          this.exemples.push({sequence: this.exemples.length + 1, first: this.primaryColor, second: this.secundaryColor});
+        }
       }
 
       public scrollPage(){

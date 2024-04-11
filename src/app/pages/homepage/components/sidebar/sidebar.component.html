@@ -1,0 +1,18 @@
+<p-sidebar #sidebarRef [(visible)]="sidebarVisible" position="right" [closeOnEscape]="true" (onHide)="service.sidebarVisible = false">
+    <ng-template pTemplate="header">
+        <div class="title-sidebar">
+            <h2>Last Generated Examples</h2>
+        </div>
+    </ng-template>
+    <div class="sidebar-content">
+        <div *ngIf="exemples.length !== 0" class="most-recent">Most Recent</div>
+        <div *ngFor="let exemple of exemplesReversed" class="column">        
+            <div class="row" (click)="returnExemple(exemple)">
+                <div>{{exemple.sequence}}</div>
+                <div class="box" [style.background-color]="exemple.first"></div>
+                <div class="box" [style.background-color]="exemple.second"></div>
+            </div>
+
+        </div>
+    </div>
+</p-sidebar>
