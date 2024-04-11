@@ -1,65 +1,66 @@
 <div [style.background-color]="corFundo" class="contact-example">
     <div [style.background-color]=corDestaque [style.color]="corTextoAux" class="contact-title">
-        <h1>Contact Us</h1>
+        <div>Contact Us</div>
     </div>
 
-    <div class="divisor"></div>         
-            <div *ngIf="isOne" class="column2">
-                <div class="card-form">
-                    <i class="pi pi-user"></i>
-                    <div class="divisor-horizontal"></div>
-                    <p>Name</p>
-                </div>
-                <div class="card-form">
-                    <i class="pi pi-at"></i>
-                    <div class="divisor-horizontal"></div>
-                    <p>Email</p>
-                </div>
-                <div class="card-form" style="height: 15%; align-items: start;">
-                    <p>Message</p>
-                </div>
-                <div [style.background-color]="corDestaque" class="confirm-btn">
-                    <p [style.color]="corTextoAux">Confirm</p>
-                </div>
-            </div>    
+    <div class="divisor"></div>      
+
+    <div *ngIf="isOne" class="column2">
+        <div class="card-form">
+            <i class="pi pi-user"></i>
+            <div class="divisor-horizontal"></div>
+            <div class="fonte">Name</div>
+        </div>
+        <div class="card-form">
+            <i class="pi pi-at"></i>
+            <div class="divisor-horizontal"></div>
+            <div class="fonte">Email</div>
+        </div>
+        <div class="card-form" style="height: 15%; align-items: start;">
+            <div class="fonte">Message</div>
+        </div>
+        <div [style.background-color]="corDestaque" class="confirm-btn">
+            <div class="fonte" [style.color]="corTextoAux">Confirm</div>
+        </div>
+    </div>    
       
 
-        <div class="divisor-horizontal"></div>
+    <div class="divisor-horizontal"></div>
+    
+    <div *ngIf="!isOne" class="column2">
         
-        <div *ngIf="!isOne" class="column2">
-            
-            <div class="input-2">
-                <p>Name</p>
-            </div>
-
-            <div class="input-2">
-                <p>Age</p>
-            </div>
-
-            <div class="input-2">
-                <p>Phone Number</p>
-            </div>
-
-            <div class="text-accept">
-                <p-checkbox></p-checkbox>
-                <p>I Accept to Recvieve Promotional Messages</p>
-            </div>
-
-            <div [style.background-color]="corDestaque" class="confirm-btn-2">
-                <p [style.color]="corTextoAux">Send</p>
-            </div>
+        <div class="input-2">
+            <div class="fonte">Name</div>
         </div>
 
-        <div class="previous-next-btns">
-            <div (click)="isOne ? null : clickNextPrev()" [ngClass]="{'btn-show' : !isOne, 'btn-hide' : isOne }" id="previous">
-                <p>1</p>
-            </div>
-            <div (click)="isOne ? clickNextPrev() : null" [ngClass]="{'btn-show' : isOne, 'btn-hide' : !isOne }" id="next">
-                <p>2</p>
-            </div>
+        <div class="input-2">
+            <div class="fonte">Age</div>
+        </div>
 
+        <div class="input-2">
+            <div class="fonte">Phone Number</div>
+        </div>
+
+        <div class="text-accept">
+            <p-checkbox></p-checkbox>
+            <div class="fonte">I Accept to Recvieve Promotional Messages</div>
+        </div>
+
+        <div [style.background-color]="corDestaque" class="confirm-btn-2">
+            <div class="fonte" [style.color]="corTextoAux">Send</div>
+        </div>
+    </div>
+
+    <div class="previous-next-btns">
+        <div (click)="isOne ? null : clickNextPrev()" [ngClass]="{'btn-show' : !isOne, 'btn-hide' : isOne }" id="previous">
+            <div>1</div>
+        </div>
+        <div (click)="isOne ? clickNextPrev() : null" [ngClass]="{'btn-show' : isOne, 'btn-hide' : !isOne }" id="next">
+            <div>2</div>
         </div>
 
     </div>
+
+</div>
     
     
