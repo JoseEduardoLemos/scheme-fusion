@@ -33,7 +33,6 @@
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.322);    
     color: white;
     height: 35%;
-    margin: 10%;
     width: 40%;
     font-size: 40px;
     font-weight: 500;
@@ -45,8 +44,8 @@
     transition: border-radius 320ms, box-shadow 320ms, font-size 150ms, background-color 320ms, height 320ms, width 320ms;
 }
 .login{
+    width: 35%;
     margin-right: 10%;
-    width: 50%;
     height: 80%;
     border-radius: 15px;
     box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.322);    
@@ -54,12 +53,11 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
 .login-account{
-    margin-top: 5%;
     margin-bottom: 2%;
     font-family: 'Montserrat';
     font-weight: 600;
@@ -87,9 +85,9 @@
 
 .forgot-password:hover{
     cursor: pointer;
-    color: rgb(0, 0, 0);
 }
 .forgot-password{
+    margin-top: 3%;
     font-style: italic;
     color: white;
     font-family: 'Montserrat';
@@ -98,16 +96,23 @@
     width: 50%;
     display: flex;
     justify-content: end;
-    transition: color 150ms;
+
 }
+
+
 .keep-2{
-    display: flex;
-    justify-content: space-between;
-    width: 18%;
+    margin-top: 3%;
+    
+    width: 25%;
     font-family: 'Montserrat';
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
     color: white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
 }
 
 .login-btn:hover{
@@ -133,6 +138,7 @@
 
 .row-new-user{
     margin: 5%;
+    margin-top: 7%;
     width: 50%;
     display: flex;
     justify-content: center;
@@ -169,4 +175,199 @@
     justify-content: center;
     align-items: center;
     transition: box-shadow 320ms;
+}
+
+@media (max-width: 1750px) {
+    .keep-2{
+        width: 30%;
+    }
+
+    .row-new-user{
+        width: 60%;
+    }
+
+    .title-login{
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 1450px) {
+    .keep-2{
+        width: 35%;
+    }
+    .row-new-user{
+        width: 65%;
+        font-size: small;
+    }
+
+    .login-account{
+        font-size: 22px;
+    }
+
+    .forgot-password{
+        justify-content: center;
+    }
+
+    .title-login{
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 1320px) {
+    .keep-2{
+        width:40%;
+    }
+    .row-new-user{
+        width: 70%;
+    }
+}
+
+@media (max-width: 1230px) {
+    .keep-2{
+        width: 45%;
+    }
+    
+    .login-account{
+        font-size: 20px;
+    }
+    
+    .forgot-password{
+        font-size: small;
+    }
+
+    .input-login{
+        height: 5%;
+        width: 65%;
+    }
+
+    .login-btn{
+        height: 5%;
+        width: 65%;
+    }
+
+    .sign-btn{
+        height: 5%;
+        width: 65%;
+    }
+
+    .title-login{
+        font-size: 26px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 1140px) {
+    .keep-2{
+        width: 40%;
+    }
+   
+    .login-account{
+        font-size: 18px;
+    }
+
+    .row-new-user{
+        width: 72%;
+        font-size: smaller;
+    }
+
+    .login-example{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .login{
+        margin-right: 0px;
+        height: 600px;
+        width: 55%;
+    }
+
+    .title-login{
+        display: none;
+    }
+
+    .title-login-container{
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    .keep-2{
+        width: 35%;
+    }
+    .row-new-user{
+        width: 90%;
+    }
+
+    .login-account{
+        font-size: 18px;
+    }
+
+    .forgot-password{
+        width: 80%;
+    }
+}
+
+@media (max-width: 800px) {
+    .keep-2{
+        width: 40%;
+        font-size: smaller;
+    }
+
+    .input-login{
+        font-size: smaller;
+    }
+
+    .sign-btn{
+        font-size: smaller;
+    }
+
+    .login-btn{
+        font-size: smaller;
+    }
+
+    .hr{
+        width: 15%;
+    }
+}
+
+@media (max-width: 565px) {
+    .keep-2{
+        width: 70%;
+        font-size: smaller;
+    }
+    
+    .login-account{
+        font-size: 14px;
+    }
+
+    .row-new-user{
+        font-size: xx-small;
+    }
+
+    .hr{
+        width: 10%;
+    }
+
+    .input-login{
+        font-size: xx-small;
+    }
+    .login{
+        width: 85%;
+    }
+
+    .login-example{
+        min-width: 300px;
+    }
+
+    .login-btn{
+        font-size: xx-small;
+    }
+
+    .sign-btn{
+        font-size: xx-small;
+    }
 }
