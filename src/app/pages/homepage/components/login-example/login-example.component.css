@@ -336,14 +336,18 @@
 
 @media (max-width: 565px) {
     .keep-2{
-        width: 70%;
-        font-size: smaller;
+        width: 40%;
+        min-width: 120px;
+        font-size: xx-small;
     }
     
     .login-account{
         font-size: 14px;
     }
 
+    .forgot-password{
+        font-size: x-small;
+    }
     .row-new-user{
         font-size: xx-small;
     }

@@ -328,4 +328,7 @@
     .texto-botoes{
         font-size: 13px;
     }
+    .boxes-buttons{
+        min-width: 320px;
+    }
 }
