@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { SidebarModule } from 'primeng/sidebar';
 import { Exemple, homeContentService } from '../home-content/home-content.service';
 
@@ -13,10 +13,17 @@ import { Exemple, homeContentService } from '../home-content/home-content.servic
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css'
 })
-export class SidebarComponent {
+export class SidebarComponent implements AfterViewInit {
   constructor(
     public service : homeContentService,
-  ) {}
+  ) { }
+
+
+  ngAfterViewInit(){
+    this.fetchFromLocalStorage();
+  }
+
+
 
   public get sidebarVisible(){
     return this.service.sidebarVisible;
@@ -27,7 +34,7 @@ export class SidebarComponent {
   }
 
   public get exemplesReversed(){
-    return this.exemples.reverse();
+    return this.fetchFromLocalStorage().reverse();
   }
 
   public last(exemple : Exemple){
@@ -37,6 +44,14 @@ export class SidebarComponent {
   public returnExemple(exemple : Exemple){
     this.service.primaryColor = exemple.first;
     this.service.secundaryColor = exemple.second;
+  }
+
+  private fetchFromLocalStorage(){
+    if(!!window.localStorage.getItem('history')){
+      this.service.exemples = JSON.parse(window.localStorage.getItem('history')!); 
+    }
+
+    return this.exemples;
   }
 
 }

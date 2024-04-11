@@ -41,6 +41,8 @@ export class homeContentService {
     public corDestaque : string = '';
     public corFundo : string = '';
 
+    private history : any;
+
 
     public exemples : Array<Exemple> = new Array<Exemple>();
 
@@ -60,13 +62,15 @@ export class homeContentService {
         this.scrollPage();
       }
 
+      private saveToLocalStorage(){
+        window.localStorage.setItem('history', this.history);
+      }
+
       private incrementExemples(){
-        console.log(this.primaryColor);
-        console.log(this.secundaryColor)
-
-
-      if(this.exemples.length < 1 || this.exemples[this.exemples.length - 1].first !== this.primaryColor || this.exemples[this.exemples.length - 1].second !== this.secundaryColor){
-          this.exemples.push({sequence: this.exemples.length + 1, first: this.primaryColor, second: this.secundaryColor});
+        if(this.exemples.length < 1 || this.exemples[this.exemples.length - 1].first !== this.primaryColor || this.exemples[this.exemples.length - 1].second !== this.secundaryColor){
+            this.exemples.push({sequence: this.exemples.length + 1, first: this.primaryColor, second: this.secundaryColor});
+            this.history = JSON.stringify(this.exemples);
+            this.saveToLocalStorage();
         }
       }
 
