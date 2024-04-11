@@ -22,4 +22,13 @@ export class NavbarComponent {
     this.service.sidebarVisible = !this.service.sidebarVisible;
   }
 
+  public clickLogo(){
+    if(window.scrollY > 150){
+      window.scrollTo({top:0, behavior: 'smooth'});
+    } else {
+      location.reload();
+    }
+
+  }
+
 }

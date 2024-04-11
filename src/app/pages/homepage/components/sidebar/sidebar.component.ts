@@ -53,22 +53,9 @@ export class SidebarComponent implements AfterViewInit {
     return this.exemples;
   }
 
-  public removeExemple(exemple : Exemple){
-    this.service.exemples = this.service.exemples.reverse();
-    this.service.exemples.splice(exemple.sequence -1, 1);
-    this.atualizarSequencias();
-    console.log(this.exemples);
-
-    this.service.exemplesToJson();
+  public removeExemple(exemple: Exemple){
+    this.service.removeExemple(exemple);
   }
 
-  public atualizarSequencias(){
-    for(let x = 0; x < this.service.exemples.length; x++){
-      let exemple = this.service.exemples[x];
-      if(exemple.sequence -1 !== x){
-        exemple.sequence = x +1;  
-      }
-    }
-  }
 
 }

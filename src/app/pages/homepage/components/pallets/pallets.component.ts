@@ -30,7 +30,7 @@ export class PalletsComponent implements OnInit{
     this.dica = document.getElementById('dica') as HTMLElement;
     this.box1 = document.getElementById('primary-box') as HTMLElement;
     this.box2 = document.getElementById('secundary-box') as HTMLElement;
-    this.box3 = document.getElementById('tertiary-box') as HTMLElement;    
+    // this.box3 = document.getElementById('tertiary-box') as HTMLElement;    
 
     this.definirHoverDasCores();
   }
