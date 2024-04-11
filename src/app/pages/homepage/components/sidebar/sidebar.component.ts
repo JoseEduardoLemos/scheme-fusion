@@ -23,10 +23,12 @@ export class SidebarComponent implements AfterViewInit {
     this.fetchFromLocalStorage();
   }
 
+  public setSidebar(){
+    this.service.sidebarVisible = !this.service.sidebarVisible;
+  }
 
-
-  public get sidebarVisible(){
-    return this.service.sidebarVisible;
+  public get hasExamples(){
+    return this.exemples.length > 0;
   }
 
   public get exemples(){
@@ -37,9 +39,6 @@ export class SidebarComponent implements AfterViewInit {
     return this.fetchFromLocalStorage().reverse();
   }
 
-  public last(exemple : Exemple){
-    return this.exemples[this.exemples.length - 1].sequence === exemple.sequence;
-  }
 
   public returnExemple(exemple : Exemple){
     this.service.primaryColor = exemple.first;
@@ -52,6 +51,24 @@ export class SidebarComponent implements AfterViewInit {
     }
 
     return this.exemples;
+  }
+
+  public removeExemple(exemple : Exemple){
+    this.service.exemples = this.service.exemples.reverse();
+    this.service.exemples.splice(exemple.sequence -1, 1);
+    this.atualizarSequencias();
+    console.log(this.exemples);
+
+    this.service.exemplesToJson();
+  }
+
+  public atualizarSequencias(){
+    for(let x = 0; x < this.service.exemples.length; x++){
+      let exemple = this.service.exemples[x];
+      if(exemple.sequence -1 !== x){
+        exemple.sequence = x +1;  
+      }
+    }
   }
 
 }

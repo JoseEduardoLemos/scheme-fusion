@@ -20,8 +20,8 @@ export class homeContentService {
     constructor()
     {
         this.primaryColor = '#5c849b';
-        this.tertiaryColor = '#435b64';
         this.secundaryColor = '#2a343d';
+        this.tertiaryColor = '#435b64';
     }   
 
     public sidebarVisible : boolean = false;
@@ -62,15 +62,24 @@ export class homeContentService {
         this.scrollPage();
       }
 
-      private saveToLocalStorage(){
+      public saveToLocalStorage(){
         window.localStorage.setItem('history', this.history);
+      }
+
+      private get getNextVal(){
+        return this.exemples.length +1;
+      }
+      
+      public exemplesToJson(){
+        this.history = JSON.stringify(this.exemples);
+        this.saveToLocalStorage();
       }
 
       private incrementExemples(){
         if(this.exemples.length < 1 || this.exemples[this.exemples.length - 1].first !== this.primaryColor || this.exemples[this.exemples.length - 1].second !== this.secundaryColor){
-            this.exemples.push({sequence: this.exemples.length + 1, first: this.primaryColor, second: this.secundaryColor});
-            this.history = JSON.stringify(this.exemples);
-            this.saveToLocalStorage();
+            this.exemples.push({sequence: this.getNextVal, first: this.primaryColor, second: this.secundaryColor});
+            this.exemples.sort((first, last) => first.sequence - last.sequence)
+            this.exemplesToJson();
         }
       }
 
@@ -86,8 +95,8 @@ export class homeContentService {
         box = document.getElementById('secundary-box');
         box?.setAttribute('style', 'background-color: #2a343d');
     
-        box = document.getElementById('tertiary-box');
-        box?.setAttribute('style', 'background-color: #435b64');
+        // box = document.getElementById('tertiary-box');
+        // box?.setAttribute('style', 'background-color: #435b64');
 
         this.primaryColor = '#5c849b';
         this.secundaryColor = '#2a343d';
@@ -129,32 +138,7 @@ export class homeContentService {
         }
     
         this.backgroundColor = corMaisClara as string;
-        let bg1 = document.getElementById('bg-1');
-        bg1!.style.backgroundColor = corMaisClara as string;
-    
-        bg1 = document.getElementById('bg-2');
-        bg1!.style.backgroundColor = corMaisClara as string;
-    
-        bg1 = document.getElementById('bg-3');
-        bg1!.style.backgroundColor = corMaisClara as string;
-    
-        bg1 = document.getElementById('bg-4');
-        bg1!.style.backgroundColor = corMaisClara as string;
-    
-        let destaque = document.getElementById('destaque-1');
-        destaque!.style.backgroundColor = corMaisEscura as string;
-    
-        destaque = document.getElementById('destaque-2');
-        destaque!.style.backgroundColor = corMaisEscura as string;
-    
-        destaque = document.getElementById('destaque-3');
-        destaque!.style.backgroundColor = corMaisEscura as string;
-    
-        destaque = document.getElementById('destaque-4');
-        destaque!.style.backgroundColor = corMaisEscura as string;
-    
-    
-        // console.log(corMaisClara)
+          
         // const sortedColors = this.colors.map(color => chroma(color));
         
         // this.colors.sort((a, b) => chroma(a).luminance() - chroma(b).luminance());

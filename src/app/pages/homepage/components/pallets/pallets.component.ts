@@ -61,17 +61,7 @@ export class PalletsComponent implements OnInit{
       this.dica!.style.visibility = 'hidden';
     });
 
-    this.box3!.addEventListener('mousemove', (e: MouseEvent) => {
-      this.dica!.style.visibility = 'visible';
-      this.dica!.style.left = `${e.pageX - 50}px`;
-      this.dica!.style.top = `${e.pageY - 100}px`;
-      this.homeService.corPosicionada = 'Cor Terciária';
-    });
-
-    this.box3!.addEventListener('mouseleave', (e : MouseEvent) =>{
-      this.dica!.style.visibility = 'hidden';
-    });
-  }
+      }
 
   public resetarCor(){
     this.homeService.resetarCor();
