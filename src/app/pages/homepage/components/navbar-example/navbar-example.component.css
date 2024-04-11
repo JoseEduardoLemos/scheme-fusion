@@ -65,3 +65,59 @@
     flex-direction: row;
     align-items: center;
 }
+
+@media (max-width: 1400px){
+    .profile{
+        width: 3%;
+    }
+}
+
+@media (max-width: 1152px){
+    .profile{
+        width: 4%;
+    }
+}
+
+@media (max-width: 830px){
+    .profile{
+        width: 5%;
+        min-width: 40px;
+    }
+
+    .logo-example{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 25px;
+        width: 20%;
+        min-width: 40px;
+        height: 100%;
+    }
+
+    .text{
+        font-size: 12px;
+    }
+
+    .search{
+        min-width: 165px;
+    }
+
+    .navbar{
+        min-width: 310px;
+    }
+}
+
+@media (max-width: 660px){
+    .profile{
+        width: 6%;
+    }
+
+    .logo-example{
+        font-size: 20px;
+    }
+
+    .text{
+        font-size: 10px;
+    }
+
+}

@@ -1,3 +1,18 @@
+.h2-class {
+    font-size: 25px; /* Tamanho padrão para telas maiores */
+  }
+
+.subtitle{
+    font-size: 22px;
+}
+  
+  @media (max-width: 580px) {
+    .h2-class {
+      font-size: 15px; /* Tamanho menor para telas menores que 580px de largura */
+    }
+  }
+
+
 .home-content{
     background-color: transparent;
     height: 80%;

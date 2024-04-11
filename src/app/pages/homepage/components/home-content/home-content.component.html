@@ -1,15 +1,17 @@
 <div class="home-content">
     <div class="row">
-        <h2 class="label">Pick the colors of your brand to generate the Color Scheme for you Website.</h2>
+        <p class="h2-class label">Choose your brand colors to generate the color scheme for your Website.</p>
     </div>
     <div class="row">
-        <h3 class="label">You can chose at last three colours.</h3>
+        <p class="label subtitle">You can choose up to two colors.</p>
     </div>
 
     <app-pallets></app-pallets>
     
 </div>
 <div [ngClass]="{'hidded' : !exempleGenerated, 'second-page' : exempleGenerated}">
+
+    <div class="divisor"></div>
 
     <h2 class="label">View the generated examples below</h2>
     <img src="../../../../../assets/images/pointing.png" height="80px" style="opacity: 0.7;" alt="A Pointing down hand">

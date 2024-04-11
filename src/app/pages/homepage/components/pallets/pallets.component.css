@@ -121,13 +121,16 @@
     margin-left: -30px;    
     color: rgb(245, 245, 245);
     font-weight: 600;
-    font-size: 30px;
+    font-size: 27px;
     font-family: "Montserrat";
 }
 
-
+.divisor{
+    height: 5%;
+}
 
 .texto-botoes{
+    margin-top: 30px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -211,4 +214,118 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1600px){
+    .texto-paleta{
+        font-size: 25px;
+    }
+
+    .texto-botoes{
+        margin-top: 25px;
+        font-size: 18px;
+    }
+    .btn{
+        width: 100px;
+        height: 40px;
+    }
+
+}
+
+@media (max-width: 1500px){
+    .box{
+        width: 250px;
+        height: 250px;
+    }
+    .row{
+        width: 50%;
+    }
+}
+
+@media (max-width: 1250px) {
+    .box{
+        width: 200px;
+        height: 200px;
+    }
+    .texto-paleta{
+        font-size: 22px;
+    }
+
+    .texto-botoes{
+        margin-top: 25px;
+        font-size: 15px;
+    }
+    .btn{
+        width: 80px;
+        height: 35px;
+    }
+    .row{
+        width: 60%;
+    }
+}
+
+@media (max-width: 850px) {
+    .texto-paleta{
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 750px){
+    .primary-box:focus{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .primary-box:hover{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .primary-box{
+        margin-top: 0px;
+        margin-left: 0px;
+        transform: rotate(0deg);
+
+    }
+    .secundary-box:focus{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .secundary-box:hover{
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    .secundary-box{
+        margin-top: 0px;
+        margin-left: 0px;
+        transform: rotate(0deg);
+
+    }
+    .box{
+        height: 30%;
+        width:50%;
+    }
+
+    .boxes{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        height: 100%;
+        width: 50%;
+    }
+    .texto-paleta{
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) {
+    .texto-paleta{
+        font-size: 15px;
+    }
+    .texto-botoes{
+        font-size: 13px;
+    }
 }
