@@ -30,6 +30,9 @@ export class homeContentService {
     public secondaryColor : any; 
     public tertiaryColor : any;
 
+    public randomPrimary : string = '';
+    public randomSecondary : string = '';
+
     public corPosicionada : string = '';
 
     public backgroundColor : string = '';
@@ -43,25 +46,24 @@ export class homeContentService {
     public corFundo : string = '';
 
     private history : any;
-    public random : boolean = false;
+    public random : Boolean = false;
 
 
     public exemples : Array<Exemple> = new Array<Exemple>();
 
-    public alterarCor() {
+    public async alterarCor() {
 
-        let box = document.getElementById('primary-box');
-        box?.setAttribute('style', `background-color:${this.primaryColor}`);
+        // let box = document.getElementById('primary-box');
+        // box?.setAttribute('style', `background-color:${this.primaryColor}`);
     
-        box = document.getElementById('secondary-box');
-        box?.setAttribute('style', `background-color:${this.secondaryColor}`);
+        // box = document.getElementById('secondary-box');
+        // box?.setAttribute('style', `background-color:${this.secondaryColor}`);
     
         // box = document.getElementById('tertiary-box');
         // box?.setAttribute('style', `background-color:${this.tertiaryColor}`);
-    
-        this.incrementExemples();
+        await this.scrollPage();
         this.generateExemple();
-        this.scrollPage();
+        this.incrementExemples();
       }
 
       public saveToLocalStorage(){
@@ -78,18 +80,25 @@ export class homeContentService {
       }
 
       private incrementExemples(){
-        if(this.exemples.length < 1 || this.exemples[this.exemples.length - 1].first !== this.primaryColor || this.exemples[this.exemples.length - 1].second !== this.secondaryColor){
-            if(this.exemples.length > 19){
-              this.removeExemple(this.exemples[this.exemples.length -1]);
-            }
+        if(!!this.random){
+          this.exemples.push({sequence: this.getNextVal, first: this.randomPrimary, second: this.randomSecondary});
           
-            this.exemples.push({sequence: this.getNextVal, first: this.primaryColor, second: this.secondaryColor});
-            this.exemples.sort((first, last) => first.sequence - last.sequence)
-            this.exemplesToJson();
+        } else{ 
+
+          if(this.exemples.length < 1 || this.exemples[0].first !== this.primaryColor || this.exemples[0].second !== this.secondaryColor){
+              if(this.exemples.length > 19){
+                this.removeExemple(this.exemples[this.exemples.length -1]);
+              }
+            
+              this.exemples.push({sequence: this.getNextVal, first: this.primaryColor, second: this.secondaryColor});
+          }
         }
+
+        this.exemples.sort((first, last) => first.sequence - last.sequence)
+        this.exemplesToJson();
       }
 
-      public scrollPage(){
+      public async scrollPage(){
         window.scrollTo({ top: 650, behavior: 'smooth'});
       }
 
@@ -118,7 +127,7 @@ export class homeContentService {
 
         this.exempleGenerated = true;
       
-        if(this.random) {
+        if(!!this.random) {
 
           this.primaryColors = chroma.scale(['white', chroma(this.primaryColor).hex(), 'black']).mode("lab").colors(22);
           this.secondaryColors = chroma.scale(['white', chroma(this.secondaryColor).hex(), 'black']).mode('lab').colors(22);
@@ -131,17 +140,18 @@ export class homeContentService {
 
           let index = Math.floor(Math.random() * this.primaryColors.length);
 
-          let randomPrimary = this.primaryColors[index] as string;
-          let randomSecondary = this.secondaryColors[Math.floor(Math.random() * this.secondaryColors.length)] as string;
+          this.randomPrimary = this.primaryColors[index] as string;
+          this.randomSecondary = this.secondaryColors[Math.floor(Math.random() * this.secondaryColors.length)] as string;
 
-          if(chroma.contrast(randomPrimary, 'black') > chroma.contrast(randomSecondary, 'black')){
-            corMaisClara = randomPrimary;
-            corMaisEscura = randomSecondary;
+          if(chroma.contrast(this.randomPrimary, 'black') > chroma.contrast(this.randomSecondary, 'black')){
+            corMaisClara = this.randomPrimary;
+            corMaisEscura = this.randomSecondary;
           } else {
-            corMaisClara = randomSecondary;
-            corMaisEscura = randomPrimary;
+            corMaisClara = this.randomSecondary;
+            corMaisEscura = this.randomPrimary;
           }
         } else {
+
           if(chroma.contrast(this.primaryColor, 'black') > chroma.contrast(this.secondaryColor, 'black')){
             corMaisClara = this.primaryColor;
             corMaisEscura = this.secondaryColor;

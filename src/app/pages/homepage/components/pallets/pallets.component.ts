@@ -48,8 +48,11 @@ export class PalletsComponent implements OnInit{
   // value : string = 'Objetive';
 
   public onToggleValueChange(event : MatButtonToggleChange){
-    this.homeService.random = event.value;
-   
+    if(event.value == 'true'){
+      this.homeService.random = true;
+    } else {
+      this.homeService.random = false;
+    }
   }
 
   public definirHoverDasCores(){
