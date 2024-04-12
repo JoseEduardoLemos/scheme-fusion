@@ -85,13 +85,13 @@ export class homeContentService {
           
         } else{ 
 
-          if(this.exemples.length < 1 || this.exemples[0].first !== this.primaryColor || this.exemples[0].second !== this.secondaryColor){
-              if(this.exemples.length > 19){
-                this.removeExemple(this.exemples[this.exemples.length -1]);
-              }
-            
+          if(this.exemples.length < 1 || this.exemples[0].first !== this.primaryColor || this.exemples[0].second !== this.secondaryColor){            
               this.exemples.push({sequence: this.getNextVal, first: this.primaryColor, second: this.secondaryColor});
           }
+        }
+
+        if(this.exemples.length > 20){
+          this.removeExemple(this.exemples[this.exemples.length -1]);
         }
 
         this.exemples.sort((first, last) => first.sequence - last.sequence)
