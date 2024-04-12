@@ -16,9 +16,18 @@
         <div class="texto-botoes">
             <p>You can take unlimited tests!</p>
         </div>
+        
+        <!-- <p-selectButton id="selectButtons" #selectButtons [options]="generationOptions" [(ngModel)]="homeService.random"></p-selectButton> -->
+        <div class="divisor"></div>
+        
+        <mat-button-toggle-group (change)="onToggleValueChange($event)" value="false" name="fontStyle" [style]="'font-weight: bolder;'" class="selectButtons" aria-label="Font Style">
+            <mat-button-toggle class="custom-button" value=false>Direct</mat-button-toggle>
+            <mat-button-toggle class="custom-button" value=true>Creative</mat-button-toggle>
+          </mat-button-toggle-group>
+
         <div class="divisor"></div>
         <div class="row">
-            <div class="btn" style="width: 80px;" (click)="resetarCor()"><i class="pi pi-sync" id="botao-return"></i></div>
+            <div class="btn" (click)="resetarCor()"><i class="pi pi-sync" id="botao-return"></i></div>
             <div class="btn" (click)="alterarCor()">Try</div>
         </div>
     </div>

@@ -1,3 +1,16 @@
+.mat-button-toggle.mat-button-toggle-checked{
+    background-color: rgb(245, 245, 245);
+}
+.mat-button-toggle{
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 600;
+
+    color: rgb(245, 245, 245);
+    background-color: #242526
+}
+
+
 .boxes-buttons{
     margin-top: 40px;
     display: flex;
@@ -141,12 +154,12 @@
 }
 
 .row{
-    width: 40%;
+    width: 200px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .dica{
@@ -182,7 +195,7 @@
 .btn{
     user-select: none;
     height: 50px;
-    width: 120px;
+    width: 95px;
 
     border-radius: 5px;
     background-color: #242526;
@@ -195,7 +208,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 10px;
+    margin: 0px;
     z-index: 11;
 
     transition: background-color 350ms, color 350ms, border 350ms;
@@ -226,8 +239,8 @@
         font-size: 18px;
     }
     .btn{
-        width: 100px;
-        height: 40px;
+        width: 95px;
+        height: 50px;
     }
 
 }
@@ -236,9 +249,6 @@
     .box{
         width: 250px;
         height: 250px;
-    }
-    .row{
-        width: 50%;
     }
 }
 
@@ -256,17 +266,36 @@
         font-size: 15px;
     }
     .btn{
-        width: 80px;
-        height: 35px;
-    }
-    .row{
-        width: 60%;
+        width: 95px;
+        height: 50px;
     }
 }
 
 @media (max-width: 850px) {
     .texto-paleta{
         font-size: 17px;
+    }
+
+    .btn{
+        width: 80px;
+        height: 40px;
+    }
+    
+    .mat-button-toggle{
+        font-size: 12px;
+        width: 80px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mat-button-toggle-checked{
+        display: none;
+    }
+
+    .row{
+        width: 163px;
     }
 }
 

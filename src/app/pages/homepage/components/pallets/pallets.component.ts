@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { homeContentService } from '../home-content/home-content.service';
+import { SelectButtonModule } from 'primeng/selectbutton';
+import { FormsModule } from '@angular/forms';
 
+import {MatButtonToggleChange, MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @Component({
   selector: 'app-pallets',
   standalone: true,
   imports: [
     ColorPickerModule,
-
+    SelectButtonModule,
+    FormsModule,
+    MatButtonToggleModule
   ],
   templateUrl: './pallets.component.html',
   styleUrl: './pallets.component.css'
@@ -33,6 +38,18 @@ export class PalletsComponent implements OnInit{
     // this.box3 = document.getElementById('tertiary-box') as HTMLElement;    
 
     this.definirHoverDasCores();
+  }
+
+  // generationOptions = [
+  //   { label: 'Objetive', value: false },
+  //   { label: 'Random', value: true },
+  // ];
+
+  // value : string = 'Objetive';
+
+  public onToggleValueChange(event : MatButtonToggleChange){
+    this.homeService.random = event.value;
+   
   }
 
   public definirHoverDasCores(){

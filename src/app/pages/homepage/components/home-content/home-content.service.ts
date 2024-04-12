@@ -34,7 +34,8 @@ export class homeContentService {
 
     public backgroundColor : string = '';
 
-    public colors : Array<String> = [];
+    public primaryColors : Array<String> = [];
+    public secondaryColors : Array<String> = [];
     public exempleGenerated : boolean = false;  
     public corTexto : string = '#353535';
     public corTextoAux : string = '';
@@ -42,6 +43,7 @@ export class homeContentService {
     public corFundo : string = '';
 
     private history : any;
+    public random : boolean = false;
 
 
     public exemples : Array<Exemple> = new Array<Exemple>();
@@ -110,21 +112,55 @@ export class homeContentService {
 
       public generateExemple(){
 
-        this.exempleGenerated = true;
-        this.colors = chroma.scale([chroma(this.primaryColor).hex(), chroma(this.secondaryColor).hex()]).mode("lab").colors(16);
         let maxContrast = 0;
         let corMaisClara;
         let corMaisEscura;
-    
-        for (const color of this.colors){
-          const constraste = chroma.contrast(color as string, 'black');
-          if(constraste > maxContrast){
-            maxContrast = constraste;
-            corMaisClara = color;
-          } else{
-            corMaisEscura = color;
+
+        this.exempleGenerated = true;
+      
+        if(this.random) {
+
+          this.primaryColors = chroma.scale(['white', chroma(this.primaryColor).hex(), 'black']).mode("lab").colors(22);
+          this.secondaryColors = chroma.scale(['white', chroma(this.secondaryColor).hex(), 'black']).mode('lab').colors(22);
+
+          this.primaryColors.splice(0, 1);
+          this.primaryColors.splice(this.primaryColors.length -1, 1);
+
+          this.secondaryColors.splice(0,1);
+          this.secondaryColors.splice(this.secondaryColors.length -1, 1);
+
+          let index = Math.floor(Math.random() * this.primaryColors.length);
+
+          let randomPrimary = this.primaryColors[index] as string;
+          let randomSecondary = this.secondaryColors[Math.floor(Math.random() * this.secondaryColors.length)] as string;
+
+          if(chroma.contrast(randomPrimary, 'black') > chroma.contrast(randomSecondary, 'black')){
+            corMaisClara = randomPrimary;
+            corMaisEscura = randomSecondary;
+          } else {
+            corMaisClara = randomSecondary;
+            corMaisEscura = randomPrimary;
           }
-        }
+        } else {
+          if(chroma.contrast(this.primaryColor, 'black') > chroma.contrast(this.secondaryColor, 'black')){
+            corMaisClara = this.primaryColor;
+            corMaisEscura = this.secondaryColor;
+          } else {
+            corMaisEscura = this.primaryColor;
+            corMaisClara = this.secondaryColor;
+          }
+
+          // for (const color of this.colors){
+          //   const constraste = chroma.contrast(color as string, 'black');
+          //   if(constraste > maxContrast){
+          //     maxContrast = constraste;
+          //     corMaisClara = color;
+          //   } else{
+          //     corMaisEscura = color;
+          //   }
+          // }
+      }
+
         corMaisClara = chroma(corMaisClara as string).hex();
         this.corFundo = corMaisClara;
         corMaisEscura = chroma(corMaisEscura as string).hex();
@@ -143,7 +179,8 @@ export class homeContentService {
         } else {
           this.corTextoAux = 'white';
         }
-    
+
+
         this.backgroundColor = corMaisClara as string;
           
         // const sortedColors = this.colors.map(color => chroma(color));
