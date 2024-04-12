@@ -64,19 +64,19 @@
     transition: margin-left 350ms, margin-top 350ms, box-shadow 350ms;
 }
 
-.secundary-box:focus{
+.secondary-box:focus{
     cursor: pointer;
     margin-top: -120px;
     margin-left: -50px;
     box-shadow: -15px 15px 15px 0px rgba(0, 0, 0, 0.13);
 }
-.secundary-box:hover{
+.secondary-box:hover{
     margin-top: -120px;
     margin-left: -50px;
     box-shadow: -15px 15px 15px 0px rgba(0, 0, 0, 0.13);
 }
 
-.secundary-box{
+.secondary-box{
     background-color: #2a343d;
     margin-left: -100px;
     margin-top: -40px;
@@ -286,16 +286,16 @@
         transform: rotate(0deg);
 
     }
-    .secundary-box:focus{
+    .secondary-box:focus{
         margin-top: 0px;
         margin-left: 0px;
     }
 
-    .secundary-box:hover{
+    .secondary-box:hover{
         margin-top: 0px;
         margin-left: 0px;
     }
-    .secundary-box{
+    .secondary-box{
         margin-top: 0px;
         margin-left: 0px;
         transform: rotate(0deg);

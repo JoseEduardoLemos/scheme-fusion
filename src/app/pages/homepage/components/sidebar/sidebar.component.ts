@@ -42,7 +42,7 @@ export class SidebarComponent implements AfterViewInit {
 
   public returnExemple(exemple : Exemple){
     this.service.primaryColor = exemple.first;
-    this.service.secundaryColor = exemple.second;
+    this.service.secondaryColor = exemple.second;
   }
 
   private fetchFromLocalStorage(){

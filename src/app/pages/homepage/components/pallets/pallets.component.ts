@@ -29,7 +29,7 @@ export class PalletsComponent implements OnInit{
   ngOnInit(): void {
     this.dica = document.getElementById('dica') as HTMLElement;
     this.box1 = document.getElementById('primary-box') as HTMLElement;
-    this.box2 = document.getElementById('secundary-box') as HTMLElement;
+    this.box2 = document.getElementById('secondary-box') as HTMLElement;
     // this.box3 = document.getElementById('tertiary-box') as HTMLElement;    
 
     this.definirHoverDasCores();
@@ -41,7 +41,7 @@ export class PalletsComponent implements OnInit{
       this.dica!.style.visibility = 'visible';
       this.dica!.style.left = `${e.pageX - 50}px`;
       this.dica!.style.top = `${e.pageY - 100}px`;
-      this.homeService.corPosicionada = 'Cor Primária';
+      this.homeService.corPosicionada = 'Primary Color';
       e.stopPropagation();
     });
 
@@ -53,7 +53,7 @@ export class PalletsComponent implements OnInit{
       this.dica!.style.visibility = 'visible';
       this.dica!.style.left = `${e.pageX - 50}px`;
       this.dica!.style.top = `${e.pageY - 100}px`;
-      this.homeService.corPosicionada = 'Cor Secundária';
+      this.homeService.corPosicionada = 'Secondary Color';
       e.stopPropagation();
     });
 
